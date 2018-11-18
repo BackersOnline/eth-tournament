@@ -1,4 +1,4 @@
-# Ehtereum Tournament
+# Ethereum Tournament
 A web application for creating tournament smart contracts with Ethereum.
 
 ## Requirements
