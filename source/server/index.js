@@ -7,12 +7,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const path = require('path');
+const AuthRoutes = require('./routes/auth');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet);
+app.use(helmet());
+
+AuthRoutes(app);
 
 const listener = app.listen(process.env.PORT, () => {
   console.log(`Server is running on http://${listener.address().address}:${listener.address().port}`);
