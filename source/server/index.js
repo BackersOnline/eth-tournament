@@ -5,15 +5,19 @@ if (!require('dotenv').load()) {
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const path = require('path');
 const AuthRoutes = require('./routes/auth');
+const verifyToken = require('./middleware/verifyToken');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(helmet());
+app.use(verifyToken);
 
 AuthRoutes(app);
 
