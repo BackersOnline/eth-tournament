@@ -1,0 +1,40 @@
+{
+  "name": "eth-tournament",
+  "version": "1.0.0",
+  "description": "A web application for creating tournament smart contracts with Ethereum.",
+  "main": "source/server/index.js",
+  "scripts": {
+    "start": "npm run db:up && node source/server/index.js",
+    "db:up": "knex migrate:latest",
+    "db:rollback": "knex migrate:rollback"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicBonetto/eth-tournament.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicBonetto/eth-tournament/issues"
+  },
+  "homepage": "https://github.com/NicBonetto/eth-tournament#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "bookshelf": "^0.13.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.0",
+    "helmet": "^3.15.0",
+    "jsonwebtoken": "^8.4.0",
+    "knex": "^0.15.2",
+    "pg": "^7.6.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "semistandard": "^13.0.1"
+  }
+}
