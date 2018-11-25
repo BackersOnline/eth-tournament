@@ -113,8 +113,18 @@ const eventSchema = {
   }
 };
 
+const deleteEventSchema = {
+  id: {
+    in: ['params'],
+    isint: true,
+    optional: false,
+    errorMessage: 'id is required and must be an integer'
+  }
+};
+
 module.exports = {
   registerSchema,
   loginSchema,
-  eventSchema
+  eventSchema,
+  deleteEventSchema
 };
