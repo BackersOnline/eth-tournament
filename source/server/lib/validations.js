@@ -68,7 +68,53 @@ const loginSchema = {
   }
 };
 
+const eventSchema = {
+  title: {
+    in: ['body'],
+    isString: true,
+    optional: false,
+    errorMessage: 'title is required and must be a string'
+  },
+  public: {
+    in: ['body'],
+    isBool: true,
+    optional: false,
+    errorMessage: 'public is required and must be a boolean'
+  },
+  start_date: {
+    in: ['body'],
+    isDate: true,
+    optional: false,
+    errorMessage: 'start_date is required and must be a date'
+  },
+  end_date: {
+    in: ['body'],
+    isDate: true,
+    optional: false,
+    errorMessage: 'end_date is required and must be a date'
+  },
+  address: {
+    in: ['body'],
+    isString: true,
+    optional: false,
+    errorMessage: 'address is required and must be a string'
+  },
+  location: {
+    in: ['body'],
+    isString: true,
+    optional: false,
+    errorMessage: 'location is required and must be a string'
+  },
+  terms: {
+    in: ['body'],
+    isString: true,
+    optional: false,
+    errorMessage: 'terms is required and must be a string'
+  }
+};
+
 module.exports = {
   registerSchema,
-  loginSchema
+  loginSchema,
+  eventSchema
 };
