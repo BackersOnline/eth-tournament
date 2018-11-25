@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const path = require('path');
 const AuthRoutes = require('./routes/auth');
+const EventRoutes = require('./routes/events');
 const verifyToken = require('./middleware/verifyToken');
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(helmet());
 app.use(verifyToken);
 
 AuthRoutes(app);
+EventRoutes(app);
 
 const listener = app.listen(process.env.PORT, () => {
   console.log(`Server is running on http://${listener.address().address}:${listener.address().port}`);
